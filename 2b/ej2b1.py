@@ -49,10 +49,12 @@ Exemple:
 """
 
 
-def sum_list_numbers(
-    list_numbers):
-    # Write here your code
-    pass
+def sum_list_numbers(list_numbers: list[float]):
+
+    suma_total = 0
+    for numero in list_numbers:
+        suma_total += numero
+    return suma_total
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y
@@ -60,5 +62,5 @@ def sum_list_numbers(
 
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'script
-
-# print(sum_list_numbers([50, 10.5, 21, 37.2, 99.9, 40.75, 80]))
+list_numbers = [50, 10.5, 21, 37.2, 99.9, 40.75, 80]
+print(sum_list_numbers(list_numbers))

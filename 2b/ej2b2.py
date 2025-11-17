@@ -60,10 +60,24 @@ L'any a comprovar serà '2000', de manera que:
 """
 
 
-def check_leap_year(
-    year):
-    # Write here your code
-    pass
+def check_leap_year(year):
+
+    if year % 4 == 0:
+        print(f"Cumple el primer parámetro para ser considerado año bisiesto: {year} % 4 == 0\n")
+        if year % 100 == 0:
+            print(f"Prueba adicional: {year} % 100 == 0, se requiere verificar mod 400\n")
+            if year % 400 == 0:
+                print(f"{year} % 400 == 0 → {year} es bisiesto\n")
+                return True
+            else:
+                print(f"{year} % 400 != 0 → {year} NO es bisiesto")
+                return False
+        else:
+            print(f"{year} % 100 != 0 → {year} es bisiesto")
+            return True
+    else:
+        print(f"{year} % 4 != 0 → {year} NO es bisiesto")
+        return False
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el
@@ -71,5 +85,5 @@ def check_leap_year(
 
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'script
-
-# print(check_leap_year(2000))
+year = 2000
+print(check_leap_year(year))

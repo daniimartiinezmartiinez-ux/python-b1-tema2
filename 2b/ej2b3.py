@@ -47,16 +47,31 @@ Exemple:
 """
 
 
-def triangle_area_calculate(
-    base, height):
-    # Write here your code
-    pass
+def triangle_area_calculate(base, altura):
+    
+    #Comprobamos que los valores sean positivos
+    if base < 0 or altura < 0:
+        raise ValueError("La base y la altura deben ser positivos.")
 
+    #Comprobamos que los valores sean enteros
+    if not isinstance(base, int) or not isinstance(altura, int): #Comprobamos que el valor sea un entero, sino enviara ValueError
+        raise ValueError("Los valores deben ser un número entero.")
 
+    #Realizamos el calculo del area
+    area = (base * altura) / 2
+    return area
+
+#Añadimos Try Except para capturar errores
+try:
+    base = 33
+    altura = 45
+    resultado = triangle_area_calculate(base, altura)
+    print(f"Resultado final: {resultado}") #Si el programa se ejecuta de manera correcta imprimira el resultado
+except ValueError as e:
+    print(f"Error: {e}") #Si el programa detecta un error imprimira el problema detectado
+    
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta
 # el script
 
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'scrip
-
-# print(triangle_area_calculate(33, 45))

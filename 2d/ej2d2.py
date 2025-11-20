@@ -67,13 +67,33 @@ Exemple:
 
 
 def calculate_max_and_min(list_numbers):
-    # Write here your code
-    pass
+    
+    max = 0
+    min = 0
+
+    if len(list_numbers) < 1:
+        raise ValueError (f"La lista debe de contener mínimo 1 elemento")
+    
+    for numero in list_numbers:
+        if isinstance(numero, str):
+            raise TypeError (f"El valor introducido '{numero}' es de valor string")
+        else:
+            if numero > max:
+                print(f"{numero} > {max} por lo tanto guardamos {numero} como valor máximo")
+                max = numero
+            if numero < min:
+                print(f"{numero} < {min} por lo tanto guardamos {numero} como valor mínimo")
+                min = numero
+    return (max, min)
+
+
+try:
+    print("\nResult: ", calculate_max_and_min([10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55]))
+except TypeError as e:
+    print("Error:", e)
+except ValueError as e:
+    print("Error:", e)
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-
-# print(
-#     "\nResult: ", calculate_max_and_min([10, 5.1, 0, -2, 31, 55, 70, -10, 200, -55.55])
-# )
